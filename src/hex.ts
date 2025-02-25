@@ -1,7 +1,7 @@
 
 const APP_WIDTH = 1000
 const APP_HEIGHT = 1000
-const HEX_SIZE = 50
+const HEX_SIZE = 40
 
 // Credit: redblobgames.com/grids/hexagons for Hex theory
 
@@ -31,6 +31,16 @@ export class Hex {
     this.q = q
     this.r = r
     this.s = -q-r
+  }
+
+  equals(other: Hex): boolean {
+    return this.q === other.q &&
+      this.r === other.r &&
+      this.s === other.s;
+  }
+
+  notEquals(other: Hex): boolean {
+    return !this.equals(other);
   }
 }
 
