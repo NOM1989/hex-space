@@ -1,7 +1,4 @@
-
-const APP_WIDTH = 1000
-const APP_HEIGHT = 1000
-const HEX_SIZE = 40
+import { APP_HEIGHT, APP_WIDTH, HEX_SIZE } from "./settings"
 
 // Credit: redblobgames.com/grids/hexagons for Hex theory
 
@@ -79,10 +76,11 @@ export function pointy_hex_to_pixel_POINT(hex: Hex) {
   return new Point(x, y)
 }
 
-interface HashTable<T> {
+export interface HashTable<T> {
     [key: string]: T
 }
 
+// eg. const hexes = HEX.hex_map_rect(-3, 3, -2, 2)
 export function hex_map_rect(left: number, right: number, top: number, bottom: number) {
   let hexes: HashTable<Hex> = {}
   for (let r = top; r <= bottom; r++) { // pointy top
